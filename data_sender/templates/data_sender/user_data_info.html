@@ -1,0 +1,61 @@
+<!-- templates/data_sender/user_data_info.html -->
+{% extends 'data_sender/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Data Sender</h2>
+        <form method="post" action="{% url 'data_sender' %}" class="form">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.company.label_tag }}
+                {{ form.company }}
+            </div>
+            <div class="mb-3">
+                {{ form.fname.label_tag }}
+                {{ form.fname }}
+            </div>
+            <div class="mb-3">
+                {{ form.lname.label_tag }}
+                {{ form.lname }}
+            </div>
+            <div class="mb-3">
+                {{ form.patronym.label_tag }}
+                {{ form.patronym }}
+            </div>
+            <div class="mb-3">
+                {{ form.status.label_tag }}
+                {{ form.status }}
+            </div>
+            <div class="mb-3">
+                {{ form.amount.label_tag }}
+                {{ form.amount }}
+            </div>
+            <div class="mb-3">
+                {{ form.created_at.label_tag }}
+                {{ form.created_at }}
+            </div>
+            <div class="mb-3">
+                {{ form.expires_at.label_tag }}
+                {{ form.expires_at }}
+            </div>
+            <div class="mb-3">
+                {{ form.services.label_tag }}
+                {{ form.services }}
+            </div>
+            <div class="mb-3">
+                {{ form.issued_for.label_tag }}
+                {{ form.issued_for }}
+            </div>
+            <div class="mb-3">
+                {{ form.device_id.label_tag }}
+                {{ form.device_id }}
+            </div>
+            <div class="mb-3">
+                {{ form.devices.label_tag }}
+                {{ form.devices }}
+            </div>
+            <button type="submit" class="btn btn-primary">Send Data</button>
+        </form>
+    </div>
+{% endblock %}
+
